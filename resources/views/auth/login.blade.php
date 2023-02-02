@@ -14,13 +14,13 @@
                     <div class="card-header card-header-primary text-center">
                         <h4 class="card-title"><strong>{{ __('Login') }}</strong></h4>
                         <div class="social-line">
-                            <a href="#" class="btn btn-just-icon btn-link btn-white">
+                            <a href="#" class="btn btn-just-icon btn-link btn-warning">
                                 <i class="fa fa-facebook-square"></i>
                             </a>
-                            <a href="#" class="btn btn-just-icon btn-link btn-white">
+                            <a href="#" class="btn btn-just-icon btn-link btn-warning">
                                 <i class="fa fa-twitter"></i>
                             </a>
-                            <a href="#" class="btn btn-just-icon btn-link btn-white">
+                            <a href="#" class="btn btn-just-icon btn-link btn-warning">
                                 <i class="fa fa-google-plus"></i>
                             </a>
                         </div>

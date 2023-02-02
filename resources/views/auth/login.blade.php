@@ -1,4 +1,4 @@
-@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('GAME CENTRAL')])
+@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => 'login', 'title' => __('TEXT CHANGED AGAIN')])
 
 @section('content')
 <div class="container" style="height: auto;">

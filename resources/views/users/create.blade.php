@@ -1,6 +1,14 @@
-@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'Nuevo usuario'])
+@extends('layouts.main', ['activePage' => 'users', 'titlePage' => 'New User'])
 @section('content')
 <div class="content">
+
+<style>
+    body{  
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    }    
+  </style> 
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -8,8 +16,8 @@
           @csrf
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Usuario</h4>
-              <p class="card-category">Ingresar datos</p>
+              <h4 class="card-title">Users</h4>
+              <p class="card-category">Input data</p>
             </div>
             <div class="card-body">
               {{-- @if ($errors->any())
@@ -22,43 +30,43 @@
                   </div>
               @endif --}}
               <div class="row">
-                <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+                <label for="name" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="name" placeholder="Ingrese su nombre" value="{{ old('name') }}" autofocus>
+                  <input type="text" class="form-control" name="name" placeholder="Input your name" value="{{ old('name') }}" autofocus>
                   @if ($errors->has('name'))
                     <span class="error text-danger" for="input-name">{{ $errors->first('name') }}</span>
                   @endif
                 </div>
               </div>
               <div class="row">
-                <label for="username" class="col-sm-2 col-form-label">Nombre de usuario</label>
+                <label for="username" class="col-sm-2 col-form-label">Username</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" name="username" placeholder="Ingrese su nombre de usuario" value="{{ old('username') }}">
+                  <input type="text" class="form-control" name="username" placeholder="Input your username" value="{{ old('username') }}">
                   @if ($errors->has('username'))
                     <span class="error text-danger" for="input-username">{{ $errors->first('username') }}</span>
                   @endif
                 </div>
               </div>
               <div class="row">
-                <label for="email" class="col-sm-2 col-form-label">Correo</label>
+                <label for="email" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-7">
-                  <input type="email" class="form-control" name="email" placeholder="Ingrese su correo" value="{{ old('email') }}">
+                  <input type="email" class="form-control" name="email" placeholder="Input your email" value="{{ old('email') }}">
                   @if ($errors->has('email'))
                     <span class="error text-danger" for="input-email">{{ $errors->first('email') }}</span>
                   @endif
                 </div>
               </div>
               <div class="row">
-                <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+                <label for="password" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" name="password" placeholder="Contraseña">
+                  <input type="password" class="form-control" name="password" placeholder="At least 8 characters">
                   @if ($errors->has('password'))
                     <span class="error text-danger" for="input-password">{{ $errors->first('password') }}</span>
                   @endif
                 </div>
               </div>
               <div class="row">
-                <label for="roles" class="col-sm-2 col-form-label">Roles</label>
+                <label for="roles" class="col-sm-2 col-form-label">Role</label>
                 <div class="col-sm-7">
                     <div class="form-group">
                         <div class="tab-content">
@@ -94,7 +102,7 @@
             </div>
             <!--Footer-->
             <div class="card-footer ml-auto mr-auto">
-              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="submit" class="btn btn-primary">Save</button>
             </div>
             <!--End footer-->
           </div>

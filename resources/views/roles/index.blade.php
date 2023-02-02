@@ -2,19 +2,27 @@
 
 @section('content')
 <div class="content">
+
+<style>
+    body{  
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    }    
+  </style> 
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
             <h4 class="card-title">Roles</h4>
-            <p class="card-category">Lista de roles registrados en la base de datos</p>
+            <p class="card-category">List of roles registered in the database</p>
           </div>
           <div class="card-body">
             <div class="row">
               <div class="col-12 text-right">
                 @can('role_create')
-                <a href="{{ route('roles.create') }}" class="btn btn-sm btn-facebook">Añadir nuevo rol</a>
+                <a href="{{ route('roles.create') }}" class="btn btn-sm btn-facebook">Add Role</a>
                 @endcan
               </div>
             </div>
@@ -22,11 +30,11 @@
               <table class="table ">
                 <thead class="text-primary">
                   <th> ID </th>
-                  <th> Nombre </th>
+                  <th> Name </th>
                   <th> Guard </th>
-                  <th> Fecha de creación </th>
-                  <th> Permisos </th>
-                  <th class="text-right"> Acciones </th>
+                  <th> Created_at </th>
+                  <th> Permissions </th>
+                  <th class="text-right"> Actions </th>
                 </thead>
                 <tbody>
                   @forelse ($roles as $role)
@@ -53,7 +61,7 @@
                     @endcan
                     @can('role_destroy')
                       <form action="{{ route('roles.destroy', $role->id) }}" method="post"
-                        onsubmit="return confirm('areYouSure')" style="display: inline-block;">
+                        onsubmit="return confirm('Sure?')" style="display: inline-block;">
                         @csrf
                         @method('DELETE')
                         <button type="submit" rel="tooltip" class="btn btn-danger">
@@ -65,7 +73,7 @@
                   </tr>
                   @empty
                   <tr>
-                    <td colspan="2">Sin registros.</td>
+                    <td colspan="2">No records.</td>
                   </tr>
                   @endforelse
                 </tbody>

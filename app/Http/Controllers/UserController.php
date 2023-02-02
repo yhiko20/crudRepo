@@ -40,7 +40,7 @@ class UserController extends Controller
 
         $roles = $request->input('roles', []);
         $user->syncRoles($roles);
-        return redirect()->route('users.show', $user->id)->with('success', 'Usuario creado correctamente');
+        return redirect()->route('users.show', $user->id)->with('success', 'User Created Successfully!');
     }
 
     public function show(User $user)
@@ -80,7 +80,7 @@ class UserController extends Controller
 
         $roles = $request->input('roles', []);
         $user->syncRoles($roles);
-        return redirect()->route('users.show', $user->id)->with('success', 'Usuario actualizado correctamente');
+        return redirect()->route('users.show', $user->id)->with('success', 'User Updated Sucessfully!');
     }
 
     public function destroy(User $user)
@@ -92,6 +92,6 @@ class UserController extends Controller
         }
 
         $user->delete();
-        return back()->with('succes', 'Usuario eliminado correctamente');
+        return back()->with('succes', 'User Deleted Sucessfully!');
     }
 }

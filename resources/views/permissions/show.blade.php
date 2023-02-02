@@ -1,13 +1,21 @@
-@extends('layouts.main', ['activePage' => 'permissions', 'titlePage' => 'Detalles del permiso'])
+@extends('layouts.main', ['activePage' => 'permissions', 'titlePage' => 'Permission Details'])
 @section('content')
 <div class="content">
+
+<style>
+    body{  
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    }    
+  </style> 
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header card-header-primary">
-            <div class="card-title">Permisos</div>
-            <p class="card-category">Vista detallada del permiso {{ $permission->name }}</p>
+            <div class="card-title">Permissions</div>
+            <p class="card-category">Detailed view of the permission: {{ $permission->name }}</p>
           </div>
           <!--body-->
           <div class="card-body">
@@ -33,7 +41,8 @@
                   </div>
                   <div class="card-footer">
                     <div class="button-container">
-                      <button class="btn btn-sm btn-primary">Editar</button>
+                      <a href="{{ route('permissions.index') }}" class="btn btn-sm btn-success mr-3"> Back </a>
+                      <button class="btn btn-sm btn-primary">Edit</button>
                     </div>
                   </div>
                 </div>

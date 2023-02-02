@@ -1,6 +1,14 @@
-@extends('layouts.main', ['activePage' => 'posts', 'titlePage' => 'Detalles del post'])
+@extends('layouts.main', ['activePage' => 'posts', 'titlePage' => 'Post details'])
 @section('content')
 <div class="content">
+
+<style>
+    body{  
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    }    
+  </style> 
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -8,52 +16,53 @@
           <!--Header-->
           <div class="card-header card-header-primary">
             <h4 class="card-title">Posts</h4>
-            <p class="card-category">Vista detallada de {{ $post->title }}</p>
+            <p class="card-category">Detailed view of: {{ $post->title }}</p>
           </div>
           <!--End header-->
           <!--Body-->
           <div class="card-body">
             <div class="row">
-              <!-- first -->
-              <div class="col-md-4">
-                <div class="card card-user">
+              
+              <div class="col-md-12">
+                <div class="card" style="width:100%;">
                   <div class="card-body">
                     <p class="card-text">
                       <div class="author">
-                        <div class="block block-one"></div>
-                        <div class="block block-two"></div>
-                        <div class="block block-three"></div>
-                        <div class="block block-four"></div>
-                        <a href="#">
-                          <img class="avatar" src="{{ asset('/img/default-avatar.png') }}" alt="">
-                          <h5 class="title mt-3">{{ $post->title }}</h5>
+                        <a href="#" class="d-flex">
+                         <img src="/image/{{$post->image}}" class="card-img-top" alt="" style="width:10rem;"">  
                         </a>
                         <p class="description">
-                          {{ _('Ceo/Co-Founder') }} <br>
                           {{ $post->title }} <br>
-                          {{ $post->created_at }}
+                          {{ $post->price }} <br>
+                          {{ $post->description }} <br>
+                          {{ $post->created_at }} 
                         </p>
                       </div>
                     </p>
-                    <div class="card-description">
-                      {{ _('Do not be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...') }}
-                    </div>
+                    {{-- <div class="card-description">
+                      {{ $post->description }}
+                    </div> --}}
                   </div>
                   <div class="card-footer">
                     <div class="button-container">
-                      <button type="submit" class="btn btn-sm btn-primary">Editar</button>
+                     <a href="{{ route('posts.index') }}" class="btn btn-sm btn-success mr-3"> Back </a>
+                     <button type="submit" class="btn btn-sm btn-primary">Edit</button>
                     </div>
                   </div>
                 </div>
               </div>
-              <!--end first-->
+
             </div>
             <!--end row-->
           </div>
           <!--End card body-->
         </div>
         <!--End card-->
-      </div>
+
+        
+
+           
+         </div>
     </div>
   </div>
 </div>

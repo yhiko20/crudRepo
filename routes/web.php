@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function() {
@@ -28,8 +32,15 @@ Route::group(['middleware' => 'auth'], function() {
     Route::put('/users/{user}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.delete');
 
+    
+    Route::get('posts-detail/{id}', [PostController::class, 'detail'])->name('posts.detail');
     Route::resource('posts', App\Http\Controllers\PostController::class);
 
     Route::resource('permissions', App\Http\Controllers\PermissionController::class);
     Route::resource('roles', App\Http\Controllers\RoleController::class);
+
+    Route::get('messages-destroy/{message}', [MessageController::class, 'destroy'])->name('messages.destroy');
+    // Route::get('messages', [MessageController::class, 'destroy'])->name('messages.show');
+
+    
 });

@@ -1,6 +1,14 @@
-@extends('layouts.main', ['activePage' => 'roles', 'titlePage' => 'Editar Rol'])
+@extends('layouts.main', ['activePage' => 'roles', 'titlePage' => 'Edit Role'])
 @section('content')
 <div class="content">
+
+<style>
+    body{  
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    }    
+  </style> 
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -10,20 +18,20 @@
           <div class="card">
             <!--Header-->
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Editar rol</h4>
-              <p class="card-category">Editar datos del rol</p>
+              <h4 class="card-title">Edit role</h4>
+              <p class="card-category">Edit Role data</p>
             </div>
             <!--End header-->
             <!--Body-->
             <div class="card-body">
               <div class="row">
-                <label for="name" class="col-sm-2 col-form-label">Nombre del rol</label>
+                <label for="name" class="col-sm-2 col-form-label">Role name</label>
                 <div class="col-sm-7">
                   <input type="text" class="form-control" name="name" value="{{ old('name', $role->name) }}" autocomplete="off" autofocus>
                 </div>
               </div>
               <div class="row">
-                <label for="name" class="col-sm-2 col-form-label">Permisos</label>
+                <label for="name" class="col-sm-2 col-form-label">Permissions</label>
                 <div class="col-sm-7">
                   <div class="form-group">
                     <div class="tab-content">
@@ -59,7 +67,7 @@
             <!--End body-->
             <!--Footer-->
             <div class="card-footer ml-auto mr-auto">
-              <button type="submit" class="btn btn-primary">Actualizar</button>
+              <button type="submit" class="btn btn-primary">Update</button>
             </div>
           </div>
           <!--End footer-->

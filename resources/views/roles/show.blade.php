@@ -1,6 +1,14 @@
-@extends('layouts.main', ['activePage' => 'roles', 'titlePage' => 'Detalles del rol'])
+@extends('layouts.main', ['activePage' => 'roles', 'titlePage' => 'Role details'])
 @section('content')
 <div class="content">
+
+<style>
+    body{  
+    background: -webkit-linear-gradient(to right, #ec2F4B, #009FFF);
+    background: linear-gradient(to right, #ec2F4B, #009FFF);
+    }    
+  </style> 
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -8,7 +16,7 @@
           <!--Header-->
           <div class="card-header card-header-primary">
             <h4 class="card-title">Roles</h4>
-            <p class="card-category">Vista detallada del rol {{ $role->name }}</p>
+            <p class="card-category">Detailed view of the role: {{ $role->name }}</p>
           </div>
           <!--End header-->
           <!--Body-->
@@ -45,7 +53,8 @@
                   </div>
                   <div class="card-footer">
                     <div class="button-container">
-                      <button type="submit" class="btn btn-sm btn-primary">Editar</button>
+                    <a href="{{ route('roles.index') }}" class="btn btn-sm btn-success mr-3"> Back </a>
+                      <button type="submit" class="btn btn-sm btn-primary">Edit</button>
                     </div>
                   </div>
                 </div>

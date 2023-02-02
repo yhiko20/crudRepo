@@ -1,4 +1,4 @@
-@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('Booking')])
+@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => 'register', 'title' => __('GAME CENTRAL')])
 
 @section('content')
 <div class="container" style="height: auto;">
@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="card-body ">
-                        <p class="card-description text-center">{{ __('Or Be Classical') }}</p>
+                        <p class="card-description text-center">{{ __('Join Now!') }}</p>
                         <div class="bmd-form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                             <div class="input-group">
                                 <div class="input-group-prepend">
